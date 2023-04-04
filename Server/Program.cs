@@ -8,7 +8,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
         services
-            .AddSingleton(c =>  new TcpListener(IPAddress.Any, NetworkConfiguration.DEFAULT_PORT))
+            .AddSingleton(c => new TcpListener(IPAddress.Any, NetworkConfiguration.DEFAULT_PORT))
             .AddHostedService<ChatbotService>();
     })
     .Build();
