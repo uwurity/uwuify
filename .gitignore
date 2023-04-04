@@ -39,3 +39,4 @@ tmp.cpp
 **/bin
 *.zip
 fly.toml
+.vscode
