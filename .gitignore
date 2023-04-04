@@ -40,3 +40,4 @@ tmp.cpp
 *.zip
 fly.toml
 .vscode
+*.txt
