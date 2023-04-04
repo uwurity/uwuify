@@ -11,19 +11,11 @@ namespace uwu.Client;
 
 public partial class MainForm : Form
 {
-    private readonly TcpClient client;
     private static readonly IPAddress localhost = IPAddress.Parse("127.0.0.1");
 
     public MainForm()
     {
-        client = new TcpClient();
         InitializeComponent();
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        client.Close();
     }
 
     private IPEndPoint? GetRemoteEndpoint()
@@ -119,22 +111,25 @@ public partial class MainForm : Form
 
                 AppendChatView("Me at ", message);
 
-                client.Connect(remoteEndPoint);
+                using (var client = new TcpClient())
+                {
+                    await client.ConnectAsync(remoteEndPoint);
 
-                var stream = client.GetStream();
+                    var stream = client.GetStream();
 
-                await stream.WriteAsync(Encoding.UTF8.GetBytes($"{message}"));
+                    await stream.WriteAsync(Encoding.UTF8.GetBytes($"{message}"));
 
-                Memory<byte> recvBuffer = new byte[1024];
-                int bytesRead = await stream.ReadAsync(recvBuffer);
+                    Memory<byte> recvBuffer = new byte[1024];
+                    int bytesRead = await stream.ReadAsync(recvBuffer);
+
+                    // Handle received data
+                    var actualReceived = recvBuffer[..bytesRead];
+
+                    var rawReply = Encoding.UTF8.GetString(actualReceived.Span);
+                    _ = Library.Message.TryParse(rawReply, out Library.Message reply); 
                     
-                // Handle received data
-                var actualReceived = recvBuffer[..bytesRead];
-
-                var rawReply = Encoding.UTF8.GetString(actualReceived.Span);
-                _ = Library.Message.TryParse(rawReply, out Library.Message reply); 
-                
-                AppendChatView("uwu at ", reply);
+                    AppendChatView("uwu at ", reply);
+                }
 
                 chatView.AppendText($"{Environment.NewLine}-------------------");
 
