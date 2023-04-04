@@ -25,18 +25,23 @@ public class ChatbotService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        _listener.Start();
         _logger.LogInformation(NetworkServiceLogEvents.Listen, "{Service} is listening", nameof(ChatbotService));
+
         while (!stoppingToken.IsCancellationRequested)
         {
-            _listener.Start();
             var client = await _listener.AcceptTcpClientAsync(stoppingToken);
 
-            var stream = client.GetStream();
+            using var stream = client.GetStream();
+            Memory<byte> recvBuffer = new byte[1024];
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                Memory<byte> recvBuffer = new byte[1024];
                 var bytesRead = await stream.ReadAsync(recvBuffer, stoppingToken);
+
+                if (bytesRead == 0)
+                    break; // Client disconnected.
+
                 var actualReceived = recvBuffer[..bytesRead];
                 var rawMessage = Encoding.UTF8.GetString(actualReceived.Span);
                 var destination = client.Client.RemoteEndPoint;
@@ -48,6 +53,8 @@ public class ChatbotService : BackgroundService
                 
                 _logger.LogInformation(NetworkServiceLogEvents.Send, "Sent a reply to {Destination}", destination);
             }
+
+            client.Close();
         }
     }
 
