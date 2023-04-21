@@ -1,6 +1,6 @@
 ﻿namespace exercise_6
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.todoButton = new System.Windows.Forms.Button();
+            this.postButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(99, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "API 1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.todoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoButton.Location = new System.Drawing.Point(99, 56);
+            this.todoButton.Name = "todoButton";
+            this.todoButton.Size = new System.Drawing.Size(154, 50);
+            this.todoButton.TabIndex = 0;
+            this.todoButton.Text = "Todo API";
+            this.todoButton.UseVisualStyleBackColor = true;
+            this.todoButton.Click += new System.EventHandler(this.TodoButton_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(304, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "API 2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.postButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postButton.Location = new System.Drawing.Point(304, 56);
+            this.postButton.Name = "postButton";
+            this.postButton.Size = new System.Drawing.Size(140, 50);
+            this.postButton.TabIndex = 1;
+            this.postButton.Text = "Post API";
+            this.postButton.UseVisualStyleBackColor = true;
+            this.postButton.Click += new System.EventHandler(this.PostButton_Click);
             // 
             // contextMenuStrip1
             // 
@@ -78,11 +78,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 161);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Controls.Add(this.postButton);
+            this.Controls.Add(this.todoButton);
+            this.Name = "MainForm";
+            this.Text = "Week 6";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +89,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button todoButton;
+        private System.Windows.Forms.Button postButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
     }
