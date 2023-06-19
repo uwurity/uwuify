@@ -6,11 +6,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
     <RootNamespace>exercise_6</RootNamespace>
-    <AssemblyName>exercise_6</AssemblyName>
 
     <ApplicationVisualStyles>true</ApplicationVisualStyles>
     <ApplicationUseCompatibleTextRendering>false</ApplicationUseCompatibleTextRendering>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <LangVersion>11</LangVersion>
+    <PackageId>week6</PackageId>
   </PropertyGroup>
 </Project>
