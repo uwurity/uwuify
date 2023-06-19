@@ -1,0 +1,17 @@
+E:\NT106\uwuify\FTP Client\bin\Debug\net7.0-windows\FTP Client.exe
+E:\NT106\uwuify\FTP Client\bin\Debug\net7.0-windows\FTP Client.deps.json
+E:\NT106\uwuify\FTP Client\bin\Debug\net7.0-windows\FTP Client.runtimeconfig.json
+E:\NT106\uwuify\FTP Client\bin\Debug\net7.0-windows\FTP Client.dll
+E:\NT106\uwuify\FTP Client\bin\Debug\net7.0-windows\FTP Client.pdb
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.csproj.AssemblyReference.cache
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP_Client.Form1.resources
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.csproj.GenerateResource.cache
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.GeneratedMSBuildEditorConfig.editorconfig
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.AssemblyInfoInputs.cache
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.AssemblyInfo.cs
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.csproj.CoreCompileInputs.cache
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.dll
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\refint\FTP Client.dll
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.pdb
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\FTP Client.genruntimeconfig.cache
+E:\NT106\uwuify\FTP Client\obj\Debug\net7.0-windows\ref\FTP Client.dll
